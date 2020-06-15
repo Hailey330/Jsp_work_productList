@@ -20,12 +20,12 @@
 		<p>DB + Ajax</p>
 
 		<div class="btn-group">
-			<button type="button" class="btn btn-light">처음으로</button>
+			<button class="btn btn-light">처음으로</button>
 			<div class="btn-group">
 				<button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">정렬하기</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="/ProductList?cmd=list">가격순</a>
-					<a class="dropdown-item" href="/ProductList?cmd=list">판매순</a>
+					<a onclick="orderByPrice()" class="dropdown-item" href="/ProductList?cmd=list">가격순</a>
+					<a onclick="orderByCount()" class="dropdown-item" href="/ProductList?cmd=list">판매순</a>
 				</div>
 			</div>
 		</div>
@@ -49,8 +49,8 @@
 							<td>${product.id}></td>
 							<td>${product.name}</td>
 							<td>${product.type}</td>
-							<td>${product.price}</td>
-							<td>${product.count}</td>
+							<td id="orderBy__price">${product.price}</td>
+							<td id="orderBy__count">${product.count}</td>
 						</tr>
 					</tbody>
 				</c:forEach>
